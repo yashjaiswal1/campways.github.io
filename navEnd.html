@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CampWays | In-Campus Navigation App</title>
+  <meta charset="utf-8">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="Team Name" content="CodePlay">
+  <meta name="Description" content="A web-application to navigate easily inside academic blocks of NMIT campus">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">   
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Custom CSS file-->
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--Custom Font via Google Font API-->
+  <link href="https://fonts.googleapis.com/css?family=Share&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style type="text/css"> 
+    body {background-color: #7A4296; background-image: url(red.jpg);background-repeat: no-repeat;background-position: 50% 0%}
+  </style>                  
+</head>
+
+<body>
+  
+<!--Navbar layout start-->
+  <nav class="foot-color" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img class="position-logo" src="favicon_pwa.png" height="40" width="40" alt="CampWays logo"><font color="white" style="font-family:Share; font-size: 30px"><b><em>CampWays</em></b></font></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html#main"><font color="white">Navigation</font></a></li>
+        <li><a href="vip.html"><font color="white">Room Locator</font></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html#main"><font color="teal">Navigation</font></a></li>       
+        <li><a href="vip.html"><font color="teal">Room Locator</font></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+<!--Navbar layout end-->
+<br><br><br>
+<!-- Destination Card -->
+
+<div class="container">
+<div class="row">
+<div class="col s10 m6 l6 xl6 offset-s1">
+<div class="card">
+      <div class="card-image waves-effect waves-block waves-light" id='card-img1'>
+      </div>
+      <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" id="card-title1"></span>
+          <p id='card-dest1'></p>
+      </div>
+      <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Do's & Don'ts<i class="material-icons right">close</i></span>
+          
+          <ol id='card-rules1'></ol>
+      </div>
+    </div>
+</div>
+<div class="col s10 m6 l6 xl6 offset-s1">
+<div class="card">
+      <div class="card-image waves-effect waves-block waves-light" id='card-img2'>
+      </div>
+      <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" id="card-title2"></span>
+          <p id='card-dest2'></p>
+      </div>
+      <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Do's & Don'ts<i class="material-icons right">close</i></span>
+          
+          <ol id='card-rules2'></ol>
+      </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<a href="index.html">
+<button class="btn waves-effect waves-light center" type="submit" name="action" onclick="logic()">FINISH<i class="material-icons right">send</i>
+</button>
+</a>
+
+<br><br>
+
+<style type="text/css">
+  #footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+</style>
+
+
+<footer class="page-footer foot-color">
+  <div class="container">
+    <div class="row" >
+      <div class="col l6 s12">
+        <h5 class="white-text">Made with ♥ & coffee</h5>
+        <p class="grey-text text-lighten-3">By Shubham, Vivek & Yash</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <a class="white-text text-lighten" href="https://goo.gl/forms/YUtH8p0wqcFpWNOW2">Give Us A Feedback</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/yashjaiswal1/CampWays">Fork Us On GitHub</a>
+    </div>
+  </div>
+</footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+  	
+  </script>
+
+  </body>
+</html>

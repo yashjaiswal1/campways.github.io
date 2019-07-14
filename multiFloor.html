@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CampWays | In-Campus Navigation App</title>
+  <meta charset="utf-8">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="Team Name" content="CodePlay">
+  <meta name="Description" content="A web-application to navigate easily inside academic blocks of NMIT campus">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">   
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Custom CSS file-->
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--Custom Font via Google Font API-->
+  <link href="https://fonts.googleapis.com/css?family=Share&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style type="text/css"> 
+    body {background-color: #7A4296; background-image: url(red.jpg);background-repeat: no-repeat;background-position: 50% 0%}
+  </style>         
+</head>
+
+<body>
+<!--Navbar layout start-->
+  <nav class="foot-color" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img class="position-logo" src="favicon_pwa.png" height="40" width="40" alt="CampWays logo"><font color="white" style="font-family:Share; font-size: 30px"><b><em>CampWays</em></b></font></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html#main"><font color="white">Navigation</font></a></li>
+        <li><a href="vip.html"><font color="white">Room Locator</font></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html#main"><font color="teal">Navigation</font></a></li>       
+        <li><a href="vip.html"><font color="teal">Room Locator</font></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <!--Navbar layout end-->
+<br><br>
+
+<div class="hide-on-large-only">
+<div class="row">
+  <img src="rotatedevice.gif" width="50px" >
+  <div class="col s8 offset-s2">
+    <br>
+    <font color="white" style="font-family:Nunito; font-size: 15px"><em>* Rotate your mobile device for a better viewing experience</em></font>
+  </div>
+</div>
+</div>
+<!--Carousel -->
+<div class="row">
+<div class="col s12 m12 l10 offset-l1">
+<div class="w3-content w3-display-container">
+  <img id="carousel-1" class="mySlides" style="width:100%">
+  <img id="carousel-2" class="mySlides" style="width:100%">
+  <div class="center">
+    <br>
+    <a class="waves-effect waves-light btn teal" onclick="plusDivs(-1)">&#10094;</a>
+    <a class="waves-effect waves-light btn teal" onclick="plusDivs(-1)">&#10095;</a>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+
+<script>
+$(document).ready(function(){
+      $('.carousel.carousel-slider').carousel({full_width: true});  
+    });
+
+setInterval(function(){
+  $('.carousel').carousel('next');
+}, 5000);
+
+//SCROLLSPY
+$(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
+
+</script>
+<!--Carousel End-->
+<br><br>
+<a id="redirect">
+<button class="btn waves-effect waves-light center" type="submit" name="action" onclick="logic()">DONE<i class="material-icons right">send</i>
+</button>
+</a>
+
+<br><br><br><br><br><br><br><br><br>
+
+<!-- make the style attribute accessible only for the mobiles and maybe tablets -->
+<footer class="page-footer foot-color" id="footer">
+  <div class="container">
+    <div class="row" >
+      <div class="col l6 s12">
+        <h5 class="white-text">Made with ♥ & coffee</h5>
+        <p class="grey-text text-lighten-3">By Shubham, Vivek & Yash</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <a class="white-text text-lighten" href="https://goo.gl/forms/YUtH8p0wqcFpWNOW2">Give Us A Feedback</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/yashjaiswal1/CampWays">Fork Us On GitHub</a>
+    </div>
+  </div>
+</footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+    var redirectLink = "navEnd.html?x=" + number;
+    document.getElementById("redirect").setAttribute("href",redirectLink);
+  </script>
+  <script type="text/javascript">
+    if(number == 3){
+  document.getElementById("carousel-1").setAttribute("src","maps/OldSeminar.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/to_LIB.png");
+}else if(number == 4){
+  document.getElementById("carousel-1").setAttribute("src","maps/OldSeminar.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/to_CAED.png");
+}else if(number == 5){
+  document.getElementById("carousel-1").setAttribute("src","maps/OldSeminar.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/to_CCPLAB.png");
+}else if(number == 6){
+  document.getElementById("carousel-1").setAttribute("src","maps/OldSeminar.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/CHEM_Oldseminar.png");
+}else if(number == 7){
+  document.getElementById("carousel-1").setAttribute("src","maps/CHEM_LIB1.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/LIB_CHEM.png");
+}else if(number == 8){
+  document.getElementById("carousel-1").setAttribute("src","maps/CHEM_LAB.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/chem_caed.png");
+}else if(number == 9){
+  document.getElementById("carousel-1").setAttribute("src","maps/CHEM_LAB.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/chem_ccp.png");
+}
+
+  </script>
+
+  </body>
+</html>
