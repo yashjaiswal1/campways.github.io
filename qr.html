@@ -1,0 +1,208 @@
+<!--Contains the floor maps for all three floors-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CampWays | In-Campus Navigation App</title>
+  <meta charset="utf-8">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="Team Name" content="CodePlay">
+  <meta name="Description" content="A web-application to navigate easily inside academic blocks of NMIT campus">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">     <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Custom CSS file-->
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--Custom Font via Google Font API-->
+  <link href="https://fonts.googleapis.com/css?family=Share&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style type="text/css"> 
+    body {background-color: #7A4296; background-image: url(red.jpg);background-repeat: no-repeat;background-position: 50% 0%}
+  </style>                  
+</head>
+
+<body>
+  
+<!--Navbar layout start-->
+  <nav class="foot-color" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img class="position-logo" src="favicon_pwa.png" height="40" width="40" alt="CampWays logo"><font color="white" style="font-family:Share; font-size: 30px"><b><em>CampWays</em></b></font></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html#main"><font color="white">Navigation</font></a></li>
+        <li><a href="vip.html"><font color="white">Room Locator</font></a></li>
+        <li><a href="maps.html"><font color="white">Maps</font></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html#main"><font color="teal">Navigation</font></a></li>       
+        <li><a href="vip.html"><font color="teal">Room Locator</font></a></li>
+        <li><a href="maps.html"><font color="teal">Maps</font></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+<!--Navbar layout end-->
+<br><br><br>
+<div class="hide-on-large-only">
+<div class="row">
+  <img src="rotatedevice.gif" width="50px" >
+  <div class="col s8 offset-s2">
+    <br>
+    <font color="white" style="font-family:Nunito; font-size: 15px"><em>* Rotate your mobile device for a better viewing experience</em></font>
+  </div>
+</div>
+</div>
+<!-- Destination Card -->
+
+<div class="container">
+<div class="row">
+<div class="col s10 m10 l11 xl10 offset-s1 offset-m2 offset-l1">
+  <div class="card white">
+        <div class="card-content red-text">
+          <span class="card-title">Navigate to your destination</span>
+          <p></p>
+          <div class="row">
+          <div class="input-field col s12 m12 l12 xl12">
+          <div class="row">
+          <label><font color="red">Current Location Detected</font></label>
+          <select class="icons" id="room-locator" disabled>
+            <option value="" id="currentLocation" disabled selected></option>
+          </select>
+          <br>
+          </div>
+          <div class="row">
+            <label><font color="red">Destination</font></label>
+            <select class="icons" id="room-locator" onchange="qrCode(this.value)">
+                <option value="" id="currentLocation" disabled selected>Choose your option</option>
+                <option value="0" class="left">Principal</option>
+                <option value="1" class="left">ISE HOD</option>
+                <option value="2" class="left">ECE HOD</option>
+                <option value="3" class="left">MECH HOD</option>
+                <option value="4" class="left">EEE HOD</option>
+            </select>
+            <br>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+
+
+<br>
+<div class="container">
+<div class="row">
+    <div id="displayFloors" class="col s8"></div>
+</div>
+</div>
+
+<div class="row">
+        <div class="col s12 m12 l10 offset-l1">
+        <div class="w3-content w3-display-container">
+          <img id="carousel-1" class="mySlides" style="width:100%">
+          <img id="carousel-2" class="mySlides" style="width:100%">
+          <div class="center">
+            <br>
+            <a class="waves-effect waves-light btn teal" onclick="plusDivs(-1)">&#10094;</a>
+            <a class="waves-effect waves-light btn teal" onclick="plusDivs(-1)">&#10095;</a>
+          </div>
+        </div>
+        </div>
+</div>
+
+<br>
+<style type="text/css">
+  #footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+</style>
+<br><br><br>
+
+<footer class="page-footer foot-color">
+  <div class="container">
+    <div class="row" >
+      <div class="col l6 s12">
+        <h5 class="white-text">Made with ♥ & coffee</h5>
+        <p class="grey-text text-lighten-3">By Shubham, Vivek & Yash</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <a class="white-text text-lighten" href="https://goo.gl/forms/YUtH8p0wqcFpWNOW2">Give Us A Feedback</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/campways/campways.github.io">Fork Us On GitHub</a>
+    </div>
+  </div>
+</footer>
+
+  <!--  Scripts-->
+  <script>
+      function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+      });
+      return vars;
+    }
+    var number = getUrlVars()["x"];
+    var curr = document.getElementById("currentLocation");
+    if(number == 0){
+        curr.innerHTML = 'Reception';
+    }else if(number == 1){
+        curr.innerHTML = 'Exit near Accounts Section';
+    }
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+    }
+
+function qrCode(choice){
+ if(choice == '0'){
+  document.getElementById("carousel-1").setAttribute("src","maps/nav.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/NAV_PRINCIPAL.png");
+}else if(choice == '1'){
+  document.getElementById("carousel-1").setAttribute("src","maps/nav.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/nav_ISE_hod.png");
+}else if(choice == '2'){
+  document.getElementById("carousel-1").setAttribute("src","maps/nav.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/nav_ECE_hod.png");
+}else if(choice == '3'){
+  document.getElementById("carousel-1").setAttribute("src","maps/rec_MECH_hod.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/rec_MECH_hod.png");
+}else if(choice == '4'){
+  document.getElementById("carousel-1").setAttribute("src","maps/rec_EEE_hod.png");
+  document.getElementById("carousel-2").setAttribute("src","maps/rec_EEE_hod.png");
+}
+}
+  </script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+  	
+  </script>
+
+  </body>
+</html>
