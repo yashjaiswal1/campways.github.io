@@ -1,1 +1,135 @@
 <!--Contains the floor maps for all three floors-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CampWays | In-Campus Navigation App</title>
+  <meta charset="utf-8">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="Team Name" content="CodePlay">
+  <meta name="Description" content="A web-application to navigate easily inside academic blocks of NMIT campus">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">     <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Custom CSS file-->
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--Custom Font via Google Font API-->
+  <link href="https://fonts.googleapis.com/css?family=Share&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style type="text/css"> 
+    body {background-color: #7A4296; background-image: url(red.jpg);background-repeat: no-repeat;background-position: 50% 0%}
+  </style>                  
+</head>
+
+<body>
+  
+<!--Navbar layout start-->
+  <nav class="foot-color" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img class="position-logo" src="favicon_pwa.png" height="40" width="40" alt="CampWays logo"><font color="white" style="font-family:Share; font-size: 30px"><b><em>CampWays</em></b></font></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html#main"><font color="white">Navigation</font></a></li>
+        <li><a href="vip.html"><font color="white">Room Locator</font></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html#main"><font color="teal">Navigation</font></a></li>       
+        <li><a href="vip.html"><font color="teal">Room Locator</font></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+<!--Navbar layout end-->
+<br><br><br>
+<div class="hide-on-large-only">
+<div class="row">
+  <img src="rotatedevice.gif" width="50px" >
+  <div class="col s8 offset-s2">
+    <br>
+    <font color="white" style="font-family:Nunito; font-size: 15px"><em>* Rotate your mobile device for a better viewing experience</em></font>
+  </div>
+</div>
+</div>
+<!-- Destination Card -->
+
+<div class="container">
+<div class="row">
+<div class="col s10 m10 l11 xl10 offset-s1 offset-m2 offset-l1">
+  <div class="card white">
+        <div class="card-content red-text">
+          <span class="card-title">Floor Maps</span>
+          <p></p>
+          <div class="row">
+          <div class="input-field col s12 m12 l12 xl12">
+          <div class="row">
+          <label><font color="red">Select a floor</font></label>
+          <select class="icons" id="room-locator" onchange="floors(this.value)">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="0" class="left">Floor 1</option>
+            <option value="1" class="left">Floor 2</option>
+            <option value="2" class="left">Ground Floor</option>
+          </select>
+          <br>
+          </div></div></div>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+
+
+<br>
+<div class="container">
+<div class="row">
+    <div id="displayFloors" class="col s8"></div>
+</div>
+</div>
+
+<script type="text/javascript">
+  var floorLoc = ["FLOOR_I.png","FLOOR_II.png","GROUND_FLOOR.png"];
+  function floors(choice){
+    document.getElementById("displayFloors").innerHTML = "<img src='maps/" + floorLoc[choice] + "' style='width:160%;'>" 
+  }
+</script>
+
+<br>
+<style type="text/css">
+  #footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+</style>
+<br><br><br>
+
+<footer class="page-footer foot-color">
+  <div class="container">
+    <div class="row" >
+      <div class="col l6 s12">
+        <h5 class="white-text">Made with ♥ & coffee</h5>
+        <p class="grey-text text-lighten-3">By Shubham, Vivek & Yash</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <a class="white-text text-lighten" href="https://goo.gl/forms/YUtH8p0wqcFpWNOW2">Give Us A Feedback</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/campways/campways.github.io">Fork Us On GitHub</a>
+    </div>
+  </div>
+</footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+  	
+  </script>
+
+  </body>
+</html>
