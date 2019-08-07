@@ -20,7 +20,18 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <style type="text/css"> 
     body {background-color: #7A4296; background-image: url(red.jpg);background-repeat: no-repeat;background-position: 50% 0%}
-  </style>                  
+  </style>      
+  <!--Web Push Notifications-->
+  <link rel="manifest" href="/manifest.json" />
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+        appId: "8d56829e-7cec-4455-a8c4-906420c9c091",
+        });
+    });
+  </script>            
 </head>
 
 <body>
