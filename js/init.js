@@ -74,6 +74,7 @@ function getUrlVars() {
 
 
 
+
 var Card = function(title, rules, imgSrc){
 	this.title = title;
 	this.rules = rules;
