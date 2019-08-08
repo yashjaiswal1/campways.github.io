@@ -1,4 +1,4 @@
-var cacheName = 'hello-pwa';
+var cacheName = 'campways-v1';
 var filesToCache = [
   '/',
   '/index.html',
