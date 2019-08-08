@@ -1,7 +1,7 @@
 var cacheName = 'campways-v1';
 var filesToCache = [
   '/',
-  '/index.html'/*,
+  '/index.html',
   '/maps.html',
   '/multiFloor.html',
   '/navEnd.html',
@@ -62,7 +62,7 @@ var filesToCache = [
   '/maps/rec_MECH_hod.png',
   '/maps/to_CAED.png',
   '/maps/to_CCPLAB.png',
-  '/maps/to_LIB.png'*/
+  '/maps/to_LIB.png'
 ];
 
 /* Start the service worker and cache all of the app's content */
