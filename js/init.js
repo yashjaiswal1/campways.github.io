@@ -27,9 +27,8 @@ function offline(){
 }
 
 const status = window.navigator.onLine;
-window.addEventListener('offline',offline);
-
 if(status){
+  console.log("HHIHIHI");
   window.addEventListener('offline',offline);
 }else{
   window.addEventListener('online',online);
