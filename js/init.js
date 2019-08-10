@@ -13,6 +13,27 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems, {});
   });
 
+//check if user is offline
+function online(){
+  if(window.confirm("Connection retrieved. Click on OK to redirect to CampWays (Online)")){
+    window.location.href = "../index.html";
+  }
+}
+
+function offline(){
+  if(window.confirm("Connection lost. Click on OK to redirect to CampWays (Offline).")){
+    window.location.href = "./offline/offline.html";
+  }
+}
+
+const status = window.navigator.onLine;
+window.addEventListener('offline',offline);
+
+if(status){
+  window.addEventListener('offline',offline);
+}else{
+  window.addEventListener('online',online);
+}
 
 // display map based on FROM and TO values
 var fromOption = document.getElementById("from");
@@ -127,18 +148,3 @@ var redirectLink = "navEnd.html?x=" + number;
 document.getElementById("redirect").setAttribute("href",redirectLink);
 
 //document.getElementById("card-title").innerHTML = 'YOLO<i class="material-icons right">more_vert</i>';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

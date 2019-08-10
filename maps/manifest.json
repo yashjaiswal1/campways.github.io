@@ -1,0 +1,9 @@
+{
+    "name": "CampWays",
+    "short_name": "CampWays",
+    "lang": "en-US",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "#cc3300"
+  }
