@@ -1,4 +1,4 @@
-var cacheName = 'campways-v3';
+var cacheName = 'campways-v4';
 var filesToCache = [
   '/',
   'index.html',
